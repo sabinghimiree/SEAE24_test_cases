@@ -1,2 +1,2 @@
-# SEAE23
-Software Engineering AE23, initial repository for Case
+# SEAE24
+Software Engineering AE24, initial repository for Case
