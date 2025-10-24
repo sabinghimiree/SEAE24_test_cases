@@ -1,17 +1,20 @@
 import sensors_main
 import unittest
-from unittest.mock import patch
+from io import StringIO
 import sys
 
-class TestIntegration(unittest.TestCase):
+class TestSystem(unittest.TestCase):
 
-    @patch('builtins.print')
-    def test_integration_check_limits(self, mock_print):
+    def test_system_main(self):
         sys.argv = ['sensors_main.py', '16', '16']
         expected_output = "Error: Incorrect command line arguments.\n"
         
+        sys.stdout = StringIO()
+        
         sensors_main.main()
-        output = mock_print.call_args[0][0]
+        output = sys.stdout.getvalue()
+
+        sys.stdout = sys.__stdout__
 
         self.assertEqual(output, expected_output)
 
