@@ -15,7 +15,7 @@ class TestSensors(unittest.TestCase):
     # expects the method to return True, since the limits are
     # correct.
     def test_check_limits1(self):
-        limits = [16, 16]
+        limits = [16, 18]
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, True)
     
